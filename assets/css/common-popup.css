@@ -1,0 +1,50 @@
+.popup-overlay-veil {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+
+    z-index: 99;
+    display: none; /* Hidden by default */
+}
+
+.popup-window {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+    z-index: 100;
+    display: none;
+}
+
+.popup-btn {
+    display: inline;
+    padding: 5px;
+    border-bottom: 3px;
+}
+
+.popup-window-btn-yes {
+    background-color: #0c7f0e;
+    border-radius: 5px;
+    padding: 12px;
+    color: white;
+}
+
+.popup-window-btn-no {
+    background-color: #ff0005;
+    border-radius: 5px;
+    padding: 12px;
+    color: white;
+}
+
+.popup-window-msg {
+    padding-left: 20px;
+    font-weight: bold;
+    font-size: 1.3em;
+}

@@ -1,0 +1,76 @@
+{
+  "lang": "ru",
+  "login": {
+    "header": "Вход",
+    "directive-nickname": "Введите свой никнейм:",
+    "placeholder-nickname": "Никнейм",
+    "directive-password": "Введите пароль:",
+    "placeholder-password": "Пароль",
+    "act": "Войти",
+    "incorrect-nickname-or-password": "Неверный логин или пароль"
+  },
+  "view-profile": {
+    "header-profile-of": "Профиль",
+    "directive-nickname": "Никнейм:"
+  },
+  "edit-profile": {
+    "header-profile-of": "Профиль",
+    "change-user-attributes": "Изменить аттрибуты пользователя",
+    "directive-nickname": "Никнейм:",
+    "directive-name": "Введите новое имя:",
+    "placeholder-name": "Новое имя",
+    "directive-password": "Введите новый пароль",
+    "placeholder-password": "Новый пароль",
+    "directive-bio": "Изменить 'о себе':",
+    "act-submit": "Применить",
+    "incorrect-profile-data": "Недопустимые данные профиля"
+  },
+  "list-rooms": {
+    "header": "Список чат-комнат",
+    "new-chat-header": "Введите идентификационные данные для вашего нового чата",
+    "directive-nickname": "Введите никнейм для нового чата:",
+    "placeholder-nickname": "Займите никнейм",
+    "directive-name": "Введите имя для нового чата:",
+    "placeholder-name": "Придумайте имя",
+    "reask-create-new-chat": "Создать новый чат?",
+    "yes-create": "Да, создай",
+    "no-create": "Нет, отмена",
+    "reask-leave-chat-X": "Вы действительно хотите покинуть чат",
+    "yes-leave": "Да, покидаю",
+    "no-leave": "Нет, отмена",
+    "page-description": "Список доступных чат-комнат",
+    "you-are-X-here": ["Вы", "здесь"],
+
+    "failed-create-chat": "Не смог создать чат",
+    "failed-to-leave-chat": "Не смог покинуть чат"
+  },
+  "chat-members": {
+    "members-of": "Участники",
+    "summon-label-nickname": "Никнейм для призываемого пользователя",
+    "summon-label-ro": "Сделать 'лишь читающим'",
+    "yes-summon": "Да, призваю",
+    "no-summon": "Нет, отмена",
+    "yes-kick": "Да, выкидываю",
+    "no-kick": "Нет, отмена",
+    "members-list-of": "Список участников",
+    "reask-kick-user-X" : "Вы действительно хотите выкинуть участника",
+
+    "failed-summon-member": "Не смог добавить участника",
+    "failed-kick-member": "Не смог выкинуть участника"
+  },
+  "chat": {
+    "header-chat": "Чат",
+    "reask-delete-message": "Удалить это сообщение?",
+    "yes-delete": "Да, удаляю",
+    "no-delete": "Нет, отмена",
+    "msgErased": "[ СТЁРТО ]",
+    "syslog": {
+      "kicked": "выкинул",
+      "summoned": "призвал",
+      "left": "покинул чат",
+      "created": "создал этот чат"
+    },
+    "failed-delete-message": "Не смог удалить сообщение",
+    "failed-send-message": "Не смог отправить сообщение"
+  }
+}

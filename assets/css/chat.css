@@ -1,0 +1,143 @@
+body, html {
+    height: 100%;
+}
+
+#chat-widget {
+    position: relative;
+    flex: 1;
+    background-color: #f1f1f1;
+    overflow: hidden;
+}
+
+.message-supercontainer{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    /*background-color: rgba(150, 0, 100, 50);*/
+    background-color: rgba(0, 0, 0, 0);
+    /*display: flex;*/
+    /*flex-direction: row;*/
+    /*justify-content: center;*/
+}
+
+.message-box{
+    /*display: inline-block;*/
+    padding: 5px;
+}
+
+.message-box-mine {
+    margin-right: 5px;
+    margin-left: auto;
+    max-width: 400px;
+    border: 2px solid #82a173;
+    padding: 5px;
+    background-color: #cdff9b;
+    color: black;
+    /*justify-self: flex-end;*/
+}
+
+.message-box-alien {
+    margin-left: 5px;
+    margin-right: auto;
+    max-width: 400px;
+    border: 2px solid dimgrey;
+    padding: 5px;
+    background-color: white;
+    color: black;
+    /*justify-self: flex-start;*/
+}
+
+/* Only non-system messages can be deleted. Deleted messages do not have delete button
+ This class should be used with (and, ofcourse, after) class message-box-my/message-box-alien */
+.message-box-deleted {
+    border: 2px solid #cb0005;
+    background-color: #ffc1bc;
+}
+
+.message-box-deleted .message-box-msg{
+    font-weight: bold;
+}
+
+.message-box-system {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 500px;
+    padding: 4px;
+    background-color: #2d2d2d;
+    color: white;
+    font-weight: bold;
+    justify-self: center;
+}
+
+/* in #chat-widget .message-box */
+.message-box-top{
+    /* You see, each message contains a 20+2+2 px high icon that HAS TO BE LOADED FIRST.
+    This happens after window.onload, so I added a crutch: loading won't update height in
+     unpredictable moment. cause it will be already high enough. BUGA-GA-GA!! */
+    min-height: 30px;
+    display: block;
+}
+
+.message-box-sender-name{
+    color: black;
+    text-decoration: none;
+    padding: 2px;
+    display: inline;
+    font-size: 0.8em;
+}
+
+/* Additional to message-box-sender-name */
+.message-box-sender-shortname {
+    font-weight: bold;
+    padding-left: 3px;
+    font-size: 0.94em;
+}
+
+.message-box-sender-name:hover{
+    color: #1060ff
+}
+
+.message-box-button{
+    width: 20px;
+    padding: 2px;
+    cursor: pointer;
+    display: inline;
+}
+
+.message-box-msg{
+    word-wrap: break-word;
+}
+
+#input-panel {
+    min-height: 20px;
+}
+
+#message-input {
+    padding: 15px;
+    height: auto;
+    width: 100%;
+    display: inline-block;
+    background-color: white;
+    border: 1px solid #1000d0;
+    border-radius : 7px;
+    font-size: .9rem;
+    margin: 10px;
+}
+
+.message-in-popup-preview{
+    border: 4px solid red;
+    width: 80%;
+    max-width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 20%;
+    word-wrap: break-word;
+}
+
+.loading-spinner{
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(0, 0, 0, 0);
+    width: 25px;
+    display: block;
+}

@@ -1,0 +1,51 @@
+#CL-bacbe {
+    margin-top: 6px;
+    margin-bottom: 4px;
+}
+
+.CL-my-chat-box {
+    display: flex;
+    flex-direction: row;
+}
+
+.CL-my-chat-box-nickname {
+    margin-left: 8px;
+    justify-self: flex-start;
+}
+
+.CL-my-chat-box-name {
+    margin-left: 14px;
+    justify-self: flex-start;
+}
+
+.CL-my-chat-box-my-role {
+    margin-left: auto;
+    justify-self: flex-end;
+}
+
+.CL-my-chat-box-leave-btn {
+    margin-left: 10px;
+    margin-right: 8px;
+    justify-self: flex-end;
+    width: 16px;
+    cursor: pointer;
+}
+
+/* The morbid thing */
+table.id-str-input-table {
+    width: 100%;
+    border-collapse: collapse; /* Combine borders */
+}
+.id-str-input-td1, .id-str-input-td2 {
+    border: none;
+}
+.id-str-input-td1 {
+    text-align: left;
+    padding-right: 5px;
+    white-space: nowrap; /* Prevent text wrap, keeping it in one line */
+    overflow: hidden; /* Hide overflow content */
+    text-overflow: ellipsis; /* Show ellipsis for overflowing text */
+}
+.id-str-input-td2 {
+    width: 100%;
+}

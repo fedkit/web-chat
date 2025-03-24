@@ -1,0 +1,68 @@
+{% ELDEF pass JSON pres JSON userinfo JSON openedchat JSON initial_chatUpdResp %}
+<script>
+    let pres = {% PUT jsinsert pres %};
+    let userinfo = {% PUT jsinsert userinfo %};
+    let openedchat = {% PUT jsinsert openedchat %};
+    let initial_chatUpdResp = {% PUT jsinsert initial_chatUpdResp %};
+</script>
+{% ENDELDEF %}
+
+{% ELDEF main JSON pres JSON userinfo JSON openedchat JSON initial_chatUpdResp %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/assets/img/favicon.png">
+    <link rel="stylesheet" href="/assets/css/debug.css">
+    <link rel="stylesheet" href="/assets/css/common.css">
+    <link rel="stylesheet" href="/assets/css/common-popup.css">
+    <link rel="stylesheet" href="/assets/css/chat.css">
+    <title>{%w pres.chat.header-chat %} {%w openedchat.name %}</title>
+</head>
+<body>
+    {% PUT chat.pass pres userinfo openedchat initial_chatUpdResp %}
+
+    <div id="msg-deletion-win" class="popup-window">
+        <h1 class="popup-window-msg">{%w pres.chat.reask-delete-message %}</h1>
+        <!-- mesage preview will be actually rewritten before each window activation-->
+        <p class="message-in-popup-preview" id="win-deletion-msg-preview">|||||||||</p>
+        <button class="popup-window-btn-yes" id="msg-deletion-yes">{%w pres.chat.yes-delete %}</button>
+        <button class="popup-window-btn-no" id="msg-deletion-no">{%w pres.chat.no-delete %}</button>
+    </div>
+
+    <div class="fullscreen-container resp-container">
+        <div class="panel" id="navigation-info-panel">
+            <a href="/list-rooms" id="go-to-chat-list" class="panel-thing">
+                <img alt="Go to list of chats" src="/assets/img/list-rooms.svg" width="32px">
+            </a>
+            <a href="/user/{% W userinfo.nickname %}" id="go-to-my-profile" class="panel-thing">
+                <img alt="Go to my profile" src="/assets/img/user.svg" width="32px">
+            </a>
+            <p class="panel-thing panel-header-txt"> {% W openedchat.name %} ({% W openedchat.nickname %})</p>
+            <a href="/chat-members/{% W openedchat.nickname %}" id="go-to-chat-settings" class="panel-thing">
+                <img alt="Settings of chat. List of members" src="/assets/img/settings-iron.svg" width="32px">
+            </a>
+        </div>
+        <div id="chat-widget">
+            <div class="chat-debug-rect" id="debug-line-highest" style="background-color: #8600d3"></div>
+            <div class="chat-debug-rect" id="debug-line-top-padding" style="background-color: #ff00ae"></div>
+            <div class="chat-debug-rect" id="debug-line-bottom-padding" style="background-color: #ff0062"></div>
+            <div class="chat-debug-rect" id="debug-line-lowest" style="background-color: #ff2f00"></div>
+            <div id="top-loading" class="message-supercontainer">
+                <img class="loading-spinner" alt="Loading backward..." src="/assets/gif/loading.gif">
+            </div>
+            <div id="bottom-loading" class="message-supercontainer">
+                <img class="loading-spinner" alt="Loading forward..." src="/assets/gif/loading.gif">
+            </div>
+        </div>
+        <div class="panel" id="input-panel">
+            <div contentEditable id="message-input" class="panel-thing"></div>
+        </div>
+        <script src="/assets/js/common.js"></script>
+        <script src="/assets/js/common-popup.js"></script>
+        <script src="/assets/js/chat.js"></script>
+    </div>
+</body>
+</html>
+{% ENDELDEF %}

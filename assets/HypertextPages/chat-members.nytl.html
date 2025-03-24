@@ -1,0 +1,61 @@
+{% ELDEF main JSON pres JSON userinfo JSON openedchat JSON initial_chatUpdResp %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/assets/img/favicon.png">
+    <link rel="stylesheet" href="/assets/css/common.css">
+    <link rel="stylesheet" href="/assets/css/common-popup.css">
+    <link rel="stylesheet" href="/assets/css/chat-members.css">
+    <title>{%w pres.chat-members.members-of %} {%w openedchat.name %}</title>
+</head>
+<body>
+    {% PUT chat.pass pres userinfo openedchat initial_chatUpdResp %}
+
+    <div id="user-summoning-win" class="popup-window">
+        <h1 class="popup-window-msg">{%w pres.chat-members.summon-label-nickname %}</h1>
+        <input class="one-line-input" id="summoned-user-nickname">
+        <input type="checkbox" id="summoned-user-is-read-only">
+        <label>{%w pres.chat-members.summon-label-ro %}</label><br>
+        <button class="popup-window-btn-yes" id="user-summoning-yes">{%w pres.chat-members.yes-summon %}</button>
+        <button class="popup-window-btn-no" id="user-summoning-no">{%w pres.chat-members.no-summon %}</button>
+    </div>
+
+    <div id="user-deletion-win" class="popup-window">
+        <!-- header will actually be rewritten before showing the window to include user nickname -->
+        <h1 id="user-deletion-win-title" class="popup-window-msg"> ||||||||| </h1>
+        <button class="popup-window-btn-yes" id="user-deletion-yes">{%w pres.chat-members.yes-kick %}</button>
+        <button class="popup-window-btn-no" id="user-deletion-no">{%w pres.chat-members.no-kick %}</button>
+    </div>
+
+    <div class="document-container resp-container">
+        <div id="navigation-panel" class="panel">
+            <a href="/list-rooms" id="go-to-chat-list" class="panel-thing">
+                <img alt="Go to list of chats" src="/assets/img/list-rooms.svg" width="32px">
+            </a>
+            <a href="/user/{% W userinfo.nickname %}" id="go-to-my-profile" class="panel-thing">
+                <img alt="Go to my profile" src="/assets/img/user.svg" width="32px">
+            </a>
+            <p class="panel-thing panel-header-txt">
+                {%w pres.chat-members.members-list-of %} {% W openedchat.name %} ({% W openedchat.nickname %})
+            </p>
+            <a href="/chat/{% W openedchat.nickname %}" id="go-to-chat-settings" class="panel-thing">
+                <img alt="Back to chat" src="/assets/img/return.svg" width="32px">
+            </a>
+        </div>
+
+        <div class="dynamic-block-list">
+            <img id="CM-btn-add" class="button-add centered-block-el" alt="New chat" src="/assets/img/add.svg">
+            <div class="dynamic-block-list-el-container" id="CM-list">
+
+            </div>
+        </div>
+    </div>
+
+    <script src="/assets/js/common.js"></script>
+    <script src="/assets/js/common-popup.js"></script>
+    <script src="/assets/js/chat-members.js"></script>
+</body>
+</html>
+{% ENDELDEF %}

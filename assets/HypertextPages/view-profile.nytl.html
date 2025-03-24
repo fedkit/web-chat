@@ -1,0 +1,36 @@
+{% ELDEF main JSON pres JSON userinfo JSON alienprofile %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/assets/img/favicon.png">
+    <link rel="stylesheet" href="/assets/css/common.css">
+    <!-- This page is so simple, that it does not even have it's separate css file -->
+    <title>{%w pres.view-profile.header-profile-of %} {%w alienprofile.name %}</title>
+</head>
+<body>
+
+    <div class="document-container resp-container">
+        <div id="navigation-panel" class="panel">
+            <a href="/list-rooms" id="go-to-chat-list" class="panel-thing">
+                <img alt="Go to list of chats" src="/assets/img/list-rooms.svg" width="32px">
+            </a>
+            <a href="/user/{% W userinfo.nickname %}" id="go-to-my-profile" class="panel-thing">
+                <img alt="Go to my profile" src="/assets/img/user.svg" width="32px">
+            </a>
+        </div>
+
+        <div class="profile-container">
+            <h2 class="profile-name-text">{%w alienprofile.name %}</h2>
+            <h3 class="profile-nickname-text">{%w pres.view-profile.directive-nickname%} {%w alienprofile.nickname %}</h3>
+            <p class="profile-bio-text">
+                {%w alienprofile.bio %}
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>
+
+{% ENDELDEF%}

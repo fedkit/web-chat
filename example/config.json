@@ -1,0 +1,24 @@
+{
+  "lang": {
+    "whitelist": ["*"],
+    "force-order": [
+      "ru"
+    ]
+  },
+  "assets": "./assets",
+  "database": {
+    "type": "sqlite3",
+    "file": "./iu9-ca-web-chat.db"
+  },
+  "limits": {
+    "max-users": 100000,
+    "max-rooms": 100000,
+    "max-messages": 10000000000000,
+    "storage-size-limit": 100000000000
+  },
+  "server": {
+    "workers": 16,
+    "http-listen": ["127.0.0.1:1025"],
+    "admin-command-listen": ["[::1]:1026"]
+  }
+}

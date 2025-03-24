@@ -1,0 +1,75 @@
+{% ELDEF main JSON pres JSON userinfo JSON initial_chatListUpdResp %}
+<!DOCTYPE html>
+<html lang="{% W pres.lang %}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{%w pres.list-rooms.header %}</title>
+    <link rel="icon" type="image/png" href="/assets/img/favicon.png">
+    <link rel="stylesheet" href="/assets/css/common.css">
+    <link rel="stylesheet" href="/assets/css/common-popup.css">
+    <link rel="stylesheet" href="/assets/css/list-rooms.css">
+</head>
+<body>
+    <script>
+        let pres = {% PUT jsinsert pres %};
+        let userinfo = {% PUT jsinsert userinfo %};
+        let initial_chatListUpdResp = {% PUT jsinsert initial_chatListUpdResp %};
+    </script>
+    <div id="chat-creation-win" class="popup-window">
+        <h1 class="popup-window-msg">{%w pres.list-rooms.new-chat-header %}</h1>
+        <table class="id-str-input-table">
+            <tr>
+                <td class="id-str-input-td1">
+                    <label for="chat-nickname-input">{%w pres.list-rooms.directive-nickname %}</label>
+                </td>
+                <td class="id-str-input-td2">
+                    <input id="chat-nickname-input" type="text" class="one-line-input"
+                           placeholder="{%w pres.list-rooms.placeholder-nickname %}" required>
+                </td>
+            </tr>
+            <tr>
+                <td class="id-str-input-td1">
+                    <label for="chat-name-input">{%w pres.list-rooms.directive-name %}</label>
+                </td>
+                <td class="id-str-input-td2">
+                    <input id="chat-name-input" type="text" class="one-line-input"
+                           placeholder="{%w pres.list-rooms.placeholder-name %}" required>
+                </td>
+            </tr>
+        </table>
+        <h1 class="popup-window-msg">{%w pres.list-rooms.reask-create-new-chat %}</h1>
+        <button class="popup-window-btn-yes" id="chat-creation-win-yes">{%w pres.list-rooms.yes-create %}</button>
+        <button class="popup-window-btn-no" id="chat-creation-win-no">{%w pres.list-rooms.no-create %}</button>
+    </div>
+
+    <div id="chat-renunciation-win" class="popup-window">
+        <!-- header will actually be rewritten before showing the window to include chat nickname -->
+        <h1 id="chat-renunciation-win-title" class="popup-window-msg">||||||||||</h1>
+        <button class="popup-window-btn-yes" id="chat-renunciation-win-yes">{%w pres.list-rooms.yes-leave %}</button>
+        <button class="popup-window-btn-no" id="chat-renunciation-win-no">{%w pres.list-rooms.no-leave %}</button>
+    </div>
+
+    <div class="document-container resp-container">
+        <div id="navigation-panel" class="panel">
+            <a href="/user/{%w userinfo.nickname %}" id="go-to-my-profile" class="panel-thing">
+                <img alt="Go to my profile" src="/assets/img/user.svg" width="32px">
+            </a>
+            <p class="panel-thing panel-header-txt">
+                {%w pres.list-rooms.page-description %}
+            </p>
+        </div>
+
+        <div class="dynamic-block-list">
+            <img id="CL-bacbe" class="button-add centered-block-el" alt="New chat" src="/assets/img/add.svg">
+            <div class="dynamic-block-list-el-container" id="CL-dblec">
+
+            </div>
+        </div>
+    </div>
+    <script src="/assets/js/common.js"></script>
+    <script src="/assets/js/common-popup.js"></script>
+    <script src="/assets/js/list-rooms.js"></script>
+</body>
+</html>
+{% ENDELDEF %}

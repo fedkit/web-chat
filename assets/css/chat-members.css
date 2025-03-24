@@ -1,0 +1,33 @@
+#CM-btn-add {
+    margin-top: 6px;
+    margin-bottom: 4px;
+    display: none;
+}
+
+.CM-member-box {
+    display: flex;
+    flex-direction: row;
+}
+
+.CL-member-box-nickname {
+    margin-left: 8px;
+    justify-self: flex-start;
+}
+
+.CM-member-box-name {
+    margin-left: 14px;
+    justify-self: flex-start;
+}
+
+.CM-member-box-role {
+    margin-left: auto;
+    justify-self: flex-end;
+}
+
+.CM-member-box-leave-btn {
+    margin-left: 10px;
+    margin-right: 8px;
+    justify-self: flex-end;
+    width: 16px;
+    cursor: pointer;
+}

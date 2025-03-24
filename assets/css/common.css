@@ -1,0 +1,206 @@
+/* Profile view elements */
+.profile-container {
+    background: white;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 60px; /* Space below the fixed panel */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+.profile-name-text {
+    color: black;
+}
+
+.profile-nickname-text{
+    color: #444;
+    text-align: left;
+}
+
+.profile-bio-text {
+    padding-top: 40px;
+    text-align: left;
+    line-height: 1.6;
+    color: black;
+}
+
+/* Panels */
+.panel {
+    width: 100%;
+    border: 2px solid blue;
+    background-color: #54b3ff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.panel-thing {
+    padding: 6px;
+}
+
+.panel-header-txt{
+    color: white;
+    font-size: 1.9em;
+    flex: 1;
+    text-align: center;
+}
+
+
+/* Containers for the whole document */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.document-container {
+    width: 80%; /* Full width of the viewport */
+    margin: 0 auto; /* Center the container horizontally */
+}
+
+.fullscreen-container {
+    width: 80%; /* Full width of the viewport */
+    height: 100vh; /* Full height of the viewport */
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    margin: 0 auto; /* Center the container horizontally */
+}
+
+@media (orientation: landscape) {
+    .resp-container{
+        width: 80%;
+    }
+}
+
+@media (orientation: portrait){
+    .resp-container{
+        width: 100%;
+    }
+}
+
+body {
+    background-color: #f000f0;
+    background-image: url("/assets/img/clavicle-transparent.png"), url("/assets/img/broken-clavicle.png");
+    background-repeat: revert;
+    background-size: 10%, 25%;
+}
+
+/* Notifications, returned from server and embedded into html page at render-time */
+
+.server-notif-error-msg-box{
+    font-size: 1.3em;
+    text-align: center;
+    padding: 10px;
+    border: 2px solid red;
+    border-radius: 30px;
+    background-color: #ff5050;
+    max-width: 40%;
+    margin: 15px auto;
+}
+
+/* Centered headers */
+
+.wide-centered-header {
+    width: 100%;
+    text-align: center;
+    font-size: 1.4em;
+}
+/* Cool buttons with text */
+
+.action-button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+
+.action-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* This is for centering non-100%wide block */
+
+.centered-block-el {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Beautiful text input */
+
+.one-line-input {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.multiline-input {
+    width: 100%;
+    /*max-width: 600px;*/
+    height: 200px;
+    padding: 10px;
+    font-size: 1.15em;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    outline: none; /* Remove default outline on focus */
+    resize: vertical; /* Allow resizing vertically */
+    transition: border-color 0.15s, box-shadow 0.15s; /* Smooth transition for border color and shadow */
+}
+
+.multiline-input:focus {
+    border-color: #007bff; /* Change border color on focus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Shadow on focus */
+}
+
+/* Handles the case of list of elements with dickanme, name, role and delete button
+ For list of chats and list of users in chat */
+.dynamic-block-list {
+    margin-top:12px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: 1px solid #c7c7c7;
+    align-items: stretch;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 8px;
+}
+
+.dynamic-block-list-el {
+    margin-top: 8px;
+    background-color: white;
+    border: 1px solid #c7c7c7;
+    color: black;
+    padding: 5px;
+}
+
+.button-add{
+    width: 50px;
+    cursor: pointer;
+}
+
+.dynamic-block-list-el-container{
+    width: 100%;
+}
+
+.entity-nickname-txt {
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+.entity-reg-field-txt {
+    /* For name and role */
+    color: #242424;
+    text-decoration: none;
+    font-size: 1.5em;
+}

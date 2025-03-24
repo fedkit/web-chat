@@ -1,0 +1,23 @@
+/* The morbid thing */
+table.logins-input-table {
+    width: 100%;
+    border-collapse: collapse; /* Combine borders */
+}
+.logins-input-td1, .logins-input-td2 {
+    border: none;
+}
+.logins-input-td1 {
+    text-align: left;
+    padding-right: 5px;
+    white-space: nowrap; /* Prevent text wrap, keeping it in one line */
+    overflow: hidden; /* Hide overflow content */
+    text-overflow: ellipsis; /* Show ellipsis for overflowing text */
+}
+.logins-input-td2 {
+    width: 100%;
+}
+
+#input-change-bio{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}

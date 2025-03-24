@@ -1,0 +1,71 @@
+{% ELDEF main JSON pres JSON userinfo JSON alienprofile JSON errors %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/assets/img/favicon.png">
+    <link rel="stylesheet" href="/assets/css/common.css">
+    <link rel="stylesheet" href="/assets/css/edit-profile.css">
+    <title>{%w pres.edit-profile.header-profile-of %} {%w alienprofile.name %}</title>
+</head>
+<body>
+
+    <div class="document-container">
+        <div id="navigation-panel" class="panel">
+            <a href="/list-rooms" id="go-to-chat-list" class="panel-thing">
+                <img alt="Go to list of chats" src="/assets/img/list-rooms.svg" width="32px">
+            </a>
+            <a href="/user/{% W userinfo.nickname %}" id="go-to-my-profile" class="panel-thing">
+                <img alt="Go to my profile" src="/assets/img/user.svg" width="32px">
+            </a>
+        </div>
+
+        {% FOR error IN errors %}
+            <div class="server-notif-error-msg-box">
+                {% W error.text %}
+            </div>
+        {% ENDFOR %}
+
+        <div class="profile-container">
+            <h2 class="profile-name-text">{% W alienprofile.name %}</h2>
+            <h3 class="profile-nickname-text">{%w pres.edit-profile.directive-nickname %} {% W alienprofile.nickname %}</h3>
+            <p class="profile-bio-text">
+                {% W alienprofile.bio %}
+            </p>
+        </div>
+
+        <div class="profile-container">
+            <h1 class="wide-centered-header">{%w pres.edit-profile.change-user-attributes %}</h1>
+            <form action = "/user/{% W alienprofile.nickname %}" method="post" enctype="application/x-www-form-urlencoded">
+                <table class="logins-input-table">
+                    <tr>
+                        <td class="logins-input-td1">
+                            <label for="new-name-input">{%w pres.edit-profile.directive-name %}</label>
+                        </td>
+                        <td class="logins-input-td2">
+                            <input name="name" id="new-name-input" type="text"
+                                   placeholder="{%w pres.edit-profile.placeholder-name %}" class="one-line-input">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="logins-input-td1">
+                            <label for="new-password-input">{%w pres.edit-profile.directive-password %}</label>
+                        </td>
+                        <td class="logins-input-td2">
+                            <input name="password" id="new-password-input" type="password"
+                                   placeholder="{%w pres.edit-profile.placeholder-password %}" class="one-line-input">
+                        </td>
+                    </tr>
+                </table>
+                <label for="input-change-bio">{%w pres.edit-profile.directive-bio %}</label>
+                <br>
+                <textarea name="bio" id="input-change-bio" class="multiline-input"></textarea>
+                <button class="action-button centered-block-el" type="submit">{%w pres.edit-profile.act-submit %}</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
+{% ENDELDEF%}

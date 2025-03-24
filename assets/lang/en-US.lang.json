@@ -1,0 +1,76 @@
+{
+  "lang": "en",
+  "login": {
+    "header": "Login",
+    "directive-nickname": "Enter your nickname:",
+    "placeholder-nickname": "Nickname",
+    "directive-password": "Enter password:",
+    "placeholder-password": "Password",
+    "act": "Login",
+    "incorrect-nickname-or-password": "Incorrect nickname or password"
+  },
+  "view-profile": {
+    "header-profile-of": "Profile of",
+    "directive-nickname": "Nickname:"
+  },
+  "edit-profile": {
+    "header-profile-of": "Profile of",
+    "change-user-attributes": "Change user attributes",
+    "directive-nickname": "Nickname:",
+    "directive-name": "Enter new name:",
+    "placeholder-name": "New name",
+    "directive-password": "Enter new password:",
+    "placeholder-password": "New password",
+    "directive-bio": "Change description:",
+    "act-submit": "Submit changes",
+    "incorrect-profile-data": "Incorrec profile data"
+  },
+  "list-rooms": {
+    "header": "List of chat rooms",
+    "new-chat-header": "Input identifying information for your new chat",
+    "directive-nickname": "Enter nickname for new chat:",
+    "placeholder-nickname": "Take a nickname",
+    "directive-name": "Enter name for new chat:",
+    "placeholder-name": "Come up with name",
+    "reask-create-new-chat": "Create new chat?",
+    "yes-create": "Yes, create",
+    "no-create": "No, cancel",
+    "reask-leave-chat-X": "Do you really want to leave chat",
+    "yes-leave": "Yes, leave",
+    "no-leave": "No, cancel",
+    "page-description": "List of available rooms",
+    "you-are-X-here": ["You are", "here"],
+
+    "failed-create-chat": "Failed to create chat",
+    "failed-to-leave-chat": "Failed to leave chat"
+  },
+  "chat-members": {
+    "members-of": "Members of",
+    "summon-label-nickname": "Nickname for summoned user",
+    "summon-label-ro": "Make read only",
+    "yes-summon": "Yes, summon",
+    "no-summon": "No, cancel",
+    "yes-kick": "Yes, delete",
+    "no-kick": "No, cancel",
+    "members-list-of": "Members list of",
+    "reask-kick-user-X" : "Do you really want to kick user",
+
+    "failed-summon-member": "Failed to add user to chat",
+    "failed-kick-member": "Failed to kick user from chat"
+  },
+  "chat": {
+    "header-chat": "Chat",
+    "reask-delete-message": "Are you sure you want to delete this message?",
+    "yes-delete": "Yes, delete",
+    "no-delete": "No, cancel",
+    "msgErased": "[ ERASED ]",
+    "syslog": {
+      "kicked": "kicked",
+      "summoned": "summoned",
+      "left": "left chat",
+      "created": "created this chat"
+    },
+    "failed-delete-message": "Failed to delete message",
+    "failed-send-message": "Failed to send message"
+  }
+}

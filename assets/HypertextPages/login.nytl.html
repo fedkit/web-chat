@@ -1,0 +1,44 @@
+{% ELDEF main JSON pres JSON userinfo JSON errors %}
+<!DOCTYPE html>
+<html lang="{% W pres.lang %}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/assets/img/favicon.png">
+    <link rel="stylesheet" href="/assets/css/common.css">
+    <link rel="stylesheet" href="/assets/css/login.css">
+    <title>{% W pres.login.header %}</title>
+</head>
+<body>
+    {% FOR error IN errors %}
+        <div class="server-notif-error-msg-box">
+            {% W error.text %}
+        </div>
+    {% ENDFOR %}
+
+    <div class="form-container">
+        <h1 class="wide-centered-header">{% W pres.login.header %}</h1>
+        <form action="/login" method="post" enctype="application/x-www-form-urlencoded">
+            <table class="logins-input-table">
+                <tr>
+                    <td class="logins-input-td1"><label for="input-nickname">{% W pres.login.directive-nickname %}</label></td>
+                    <td class="logins-input-td2">
+                        <input type="text" name="nickname" id="input-nickname"
+                               placeholder="{% W pres.login.placeholder-nickname %}" class="one-line-input" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="logins-input-td1"><label for="input-password">{% W pres.login.directive-password %}</label></td>
+                    <td class="logins-input-td2">
+                        <input name="password" id="input-password" type="password"
+                               placeholder="{% W pres.login.placeholder-password %}" class="one-line-input" required>
+                    </td>
+                </tr>
+            </table>
+            <button class="action-button centered-block-el" type="submit">{% W pres.login.act %}</button>
+        </form>
+    </div>
+
+</body>
+</html>
+{% ENDELDEF %}
